@@ -1,0 +1,707 @@
+
+.vinted-republish-btn { display: block !important; margin-top: 8px !important; }
+.vinted-republish-btn,
+.vinted-republish-btn * { font-size: 14px !important; }
+.vinted-republish-btn.is-loading { opacity: 0.6; pointer-events: none; }
+.vinted-wardrobe-launcher {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2147483640;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 22px;
+  background: #007782;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  touch-action: none;
+  user-select: none;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  transition: none;
+}
+.vinted-wardrobe-launcher.is-left {
+  border-radius: 0 22px 22px 0;
+}
+.vinted-wardrobe-launcher.is-right {
+  border-radius: 22px 0 0 22px;
+}
+.vinted-wardrobe-panel {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2147483645;
+  display: flex;
+  flex-direction: column;
+  width: min(1180px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f7f7f7;
+  color: #292929;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, .25);
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.vinted-wardrobe-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: #007782;
+  color: #fff;
+}
+.vinted-wardrobe-panel__header h2 { margin: 0; font-size: 18px; }
+.vinted-wardrobe-panel__close {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 22px;
+}
+.vinted-wardrobe-panel__body { overflow: auto; padding: 14px; }
+.vinted-wardrobe-panel__layout { display: flex; min-height: 0; flex: 1; }
+.vinted-wardrobe-panel__sidebar {
+  width: 170px;
+  flex: 0 0 170px;
+  padding: 14px 10px;
+  background: #fff;
+  border-right: 1px solid #e3e3e3;
+}
+.vinted-wardrobe-panel__nav {
+  display: grid;
+  gap: 5px;
+}
+.vinted-wardrobe-panel__nav button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #555;
+  text-align: left;
+  font-weight: 600;
+}
+.vinted-wardrobe-panel__nav button.is-active,
+.vinted-wardrobe-panel__nav button:hover {
+  background: #e9f7f7;
+  color: #007782;
+}
+.vinted-wardrobe-panel__content { min-width: 0; flex: 1; overflow: auto; }
+.vinted-wardrobe-panel__view[hidden] { display: none; }
+.vinted-wardrobe-panel__view > h3,
+.vinted-wardrobe-panel__view > p { display: none; }
+.vinted-wardrobe-log {
+  overflow: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+}
+.vinted-wardrobe-log__row {
+  display: grid;
+  grid-template-columns: 155px 90px 1fr;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+}
+.vinted-wardrobe-log__row:last-child { border-bottom: 0; }
+.vinted-wardrobe-log__time { color: #777; }
+.vinted-wardrobe-log__type { color: #007782; font-weight: 600; }
+.vinted-analytics { display: grid; gap: 14px; }
+.vinted-analytics__toolbar,
+.vinted-analytics__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.vinted-analytics__toolbar select { min-width: 150px; }
+.vinted-analytics__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.vinted-analytics__card,
+.vinted-analytics__chart,
+.vinted-analytics__table,
+.vinted-analytics__notice {
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 9px;
+  background: #fff;
+}
+.vinted-analytics__card strong { display: block; margin-top: 5px; font-size: 20px; color: #007782; }
+.vinted-analytics__muted { color: #6b6b6b; }
+.vinted-analytics__chart svg { display: block; width: 100%; height: 210px; }
+.vinted-analytics__chart path { fill: none; stroke: #007782; stroke-width: 3; }
+.vinted-analytics__chart line { stroke: #e5eeee; stroke-width: 1; }
+.vinted-analytics__chart text { fill: #777; font-size: 11px; }
+.vinted-analytics__notice { border-color: #f1c27d; background: #fff8ed; color: #704214; line-height: 1.45; }
+.vinted-analytics__potential { display: grid; gap: 7px; }
+.vinted-analytics__potential-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) 90px 90px auto; gap: 10px; align-items: center; padding: 9px; border-bottom: 1px solid #eee; }
+.vinted-analytics__potential-row:last-child { border-bottom: 0; }
+.vinted-analytics__potential-row img { width: 44px; height: 44px; border-radius: 6px; object-fit: cover; background: #f1f1f1; }
+.vinted-finance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.vinted-finance__card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+}
+.vinted-finance__card strong { color: #007782; font-size: 24px; }
+.vinted-finance__card small,
+.vinted-finance__card p { margin: 0; color: #666; line-height: 1.45; }
+.vinted-finance__notice { grid-column: 1 / -1; border-color: #f1c27d; background: #fff8ed; color: #704214; }
+.vinted-finance__login button { justify-self: start; }
+.vinted-drafts-grid,
+.vinted-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+.vinted-draft-card,
+.vinted-settings-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.vinted-draft-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #f3f3f3;
+}
+.vinted-draft-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+}
+.vinted-draft-card__body strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.vinted-draft-card__meta {
+  color: #666;
+  font-size: 12px;
+}
+.vinted-draft-card__bar {
+  overflow: hidden;
+  height: 8px;
+  border-radius: 999px;
+  background: #edf4f4;
+}
+.vinted-draft-card__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #35aaaf, #007782);
+}
+.vinted-draft-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+.vinted-settings-card {
+  padding: 14px;
+  gap: 10px;
+}
+.vinted-settings-card strong {
+  font-size: 15px;
+  color: #1f1f1f;
+}
+.vinted-settings-card p {
+  margin: 0;
+  color: #5e5e5e;
+  line-height: 1.5;
+}
+@media (max-width: 850px) {
+  .vinted-analytics__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.vinted-wardrobe-warning {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border: 1px solid #f1c27d;
+  border-radius: 7px;
+  background: #fff8ed;
+  color: #704214;
+  line-height: 1.4;
+}
+@media (max-width: 700px) {
+  .vinted-wardrobe-panel__sidebar { width: 120px; flex-basis: 120px; }
+  .vinted-wardrobe-log__row { grid-template-columns: 1fr; gap: 3px; }
+}
+.vinted-wardrobe-panel__toolbar,
+.vinted-wardrobe-panel__actions,
+.vinted-wardrobe-panel__settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.vinted-wardrobe-panel input,
+.vinted-wardrobe-panel select,
+.vinted-wardrobe-panel button {
+  box-sizing: border-box;
+  min-height: 36px;
+  border-radius: 6px;
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.vinted-wardrobe-panel input,
+.vinted-wardrobe-panel select {
+  padding: 7px 9px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+}
+.vinted-wardrobe-panel__search { flex: 1 1 220px; }
+.vinted-wardrobe-panel button {
+  padding: 7px 11px;
+  border: 1px solid #007782;
+  background: #fff;
+  color: #007782;
+  cursor: pointer;
+}
+.vinted-wardrobe-panel button.is-primary { background: #007782; color: #fff; }
+.vinted-wardrobe-panel button.is-danger { border-color: #b42318; color: #b42318; }
+.vinted-wardrobe-panel__items { display: grid; gap: 7px; }
+.vinted-wardrobe-item {
+  display: grid;
+  grid-template-columns: 28px 56px minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+}
+.vinted-wardrobe-item--sold {
+  border-color: #c9cdd1;
+  background: #f3f4f5;
+}
+.vinted-wardrobe-item--sold input[type="checkbox"] {
+  accent-color: #69727a;
+}
+.vinted-wardrobe-item--published {
+  border-left: 4px solid #b4233c;
+}
+.vinted-wardrobe-item img { width: 56px; height: 56px; border-radius: 6px; object-fit: cover; }
+.vinted-wardrobe-item__title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.vinted-wardrobe-item__meta { margin-top: 3px; color: #666; font-size: 12px; }
+.vinted-wardrobe-item__backup {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 8px;
+  border: 1px solid #cce8df;
+  border-radius: 999px;
+  background: #edf9f4;
+  color: #087443;
+  font-size: 12px;
+  font-weight: 600;
+}
+.vinted-item-status-label {
+  margin-top: 6px;
+  color: #087443;
+  font-weight: 600;
+}
+.vinted-item-status-label.is-sold {
+  color: #b4233c;
+}
+.vinted-item-status {
+  justify-self: end;
+  min-width: 70px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.vinted-item-status--published {
+  background: #fae8ea;
+  color: #b4233c;
+}
+.vinted-item-status--sold {
+  background: #eeeeee;
+  color: #5b6168;
+}
+.vinted-item-status--hidden {
+  background: #fff1d6;
+  color: #9a5b00;
+}
+.vinted-item-status--draft {
+  background: #e8efff;
+  color: #3158a5;
+}
+.vinted-wardrobe-panel__settings {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #e3e3e3;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fdfd 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+.vinted-wardrobe-panel__settings label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #3d3d3d;
+  line-height: 1.4;
+}
+.vinted-wardrobe-panel__settings .vinted-delay-field {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #555;
+}
+.vinted-wardrobe-panel__settings .vinted-delay-field[hidden] { display: none; }
+.vinted-manager-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 30, 30, .45);
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.vinted-manager-loading__card {
+  width: min(420px, 100%);
+  padding: 28px;
+  border-radius: 12px;
+  background: #fff;
+  color: #292929;
+  text-align: center;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, .25);
+}
+.vinted-manager-loading__spinner {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 16px;
+  border: 4px solid #d9eeee;
+  border-top-color: #007782;
+  border-radius: 50%;
+  animation: vinted-manager-spin .8s linear infinite;
+}
+.vinted-manager-loading__card h2 { margin: 0 0 8px; font-size: 20px; }
+.vinted-manager-loading__card p { margin: 0; color: #626262; line-height: 1.45; }
+@keyframes vinted-manager-spin { to { transform: rotate(360deg); } }
+.vinted-relist-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 30, 30, 0.45);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+.vinted-relist-dialog {
+  box-sizing: border-box;
+  width: min(440px, 100%);
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  color: #292929;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.24);
+}
+.vinted-relist-dialog h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+.vinted-relist-dialog p {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.vinted-relist-dialog__warning {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff4e5;
+  color: #704214;
+}
+.vinted-relist-dialog__option {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 14px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.vinted-relist-dialog__option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #007782;
+  flex: 0 0 auto;
+}
+.vinted-relist-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+.vinted-relist-dialog__actions button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid #007782;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.vinted-relist-dialog__cancel { background: #fff; color: #007782; }
+.vinted-relist-dialog__confirm { background: #007782; color: #fff; }
+.vinted-manager-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 30, 30, .45);
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.vinted-manager-dialog {
+  box-sizing: border-box;
+  width: min(520px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  color: #292929;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, .25);
+}
+.vinted-manager-dialog h2 { margin: 0 0 8px; font-size: 20px; }
+.vinted-manager-dialog p { color: #626262; line-height: 1.45; }
+.vinted-manager-dialog label { display: grid; gap: 6px; margin-top: 16px; color: #555; }
+.vinted-manager-dialog input,
+.vinted-manager-dialog select {
+  min-height: 42px;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 7px;
+  background: #fff;
+  font: inherit;
+}
+.vinted-manager-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+.vinted-manager-dialog__actions button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid #007782;
+  border-radius: 7px;
+  background: #fff;
+  color: #007782;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.vinted-manager-dialog__actions button.is-primary { background: #007782; color: #fff; }
+.vinted-manager-dialog__actions button.is-danger { border-color: #b42318; color: #b42318; }
+.vinted-relist-notice { 
+  box-sizing: border-box;
+  width: auto;
+  max-width: 420px;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.vinted-relist-notice.is-success { background: #e6f7ee; color: #0f5132; border: 1px solid #a3e4c4; }
+.vinted-relist-notice.is-error { background: #fdecea; color: #842029; border: 1px solid #f5c2c7; }
+.vinted-relist-toast {
+  position: fixed !important;
+  bottom: 16px !important;
+  right: 16px !important;
+  left: auto !important;
+  z-index: 2147483647 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.vinted-relist-toast.is-activity {
+  max-width: 320px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+.vinted-bulk-relist-progress {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 30, 30, .45);
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.vinted-bulk-relist-progress__dialog {
+  box-sizing: border-box;
+  width: min(760px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 28px 32px 22px;
+  border-radius: 12px;
+  background: #fff;
+  color: #292929;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, .25);
+}
+.vinted-bulk-relist-progress__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.vinted-bulk-relist-progress__header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  line-height: 1.25;
+}
+.vinted-bulk-relist-progress__header p {
+  margin: 0;
+  color: #626262;
+  font-size: 16px;
+}
+.vinted-bulk-relist-progress__counter {
+  font-size: 22px;
+  white-space: nowrap;
+}
+.vinted-bulk-relist-progress__track {
+  height: 10px;
+  margin: 24px 0 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf0f2;
+}
+.vinted-bulk-relist-progress__bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #007782;
+  transition: width .2s ease;
+}
+.vinted-bulk-relist-progress__item {
+  display: grid;
+  grid-template-columns: 28px 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-height: 78px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.vinted-bulk-relist-progress__item:last-child { border-bottom: 0; }
+.vinted-bulk-relist-progress__item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f3f3f3;
+}
+.vinted-bulk-relist-progress__details {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.vinted-bulk-relist-progress__details strong {
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.vinted-bulk-relist-progress__details span { color: #626262; }
+.vinted-bulk-relist-progress__icon {
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  border: 3px solid #c7cdd1;
+  border-radius: 50%;
+}
+.vinted-bulk-relist-progress__icon.is-running {
+  border-color: #007782 #c7cdd1 #c7cdd1 #007782;
+  animation: vinted-manager-spin .8s linear infinite;
+}
+.vinted-bulk-relist-progress__icon.is-waiting {
+  border-color: #e6a700 #f3dfaa #f3dfaa #e6a700;
+  animation: vinted-manager-spin 1.2s linear infinite;
+}
+.vinted-bulk-relist-progress__icon.is-completed {
+  border-color: #00a95c;
+  position: relative;
+}
+.vinted-bulk-relist-progress__icon.is-completed::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #00a95c;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.vinted-bulk-relist-progress__icon.is-failed {
+  border-color: #c6283d;
+  position: relative;
+}
+.vinted-bulk-relist-progress__icon.is-failed::before,
+.vinted-bulk-relist-progress__icon.is-failed::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  width: 2px;
+  height: 12px;
+  background: #c6283d;
+  transform: rotate(45deg);
+}
+.vinted-bulk-relist-progress__icon.is-failed::after { transform: rotate(-45deg); }
+.vinted-bulk-relist-progress__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: #626262;
+  font-size: 16px;
+}
+.vinted-bulk-relist-progress__close {
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid #007782;
+  border-radius: 7px;
+  background: #007782;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+    
